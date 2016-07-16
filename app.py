@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/") #home function 
 def main(): #runs as html
 	pokemon = csv.reader(open("pokemon.csv"))
-	return render_template("index.html",x=12*y, pokemon = pokemon)
+	return render_template("index.html",x=112*y, pokemon = pokemon)
 
 @app.route("/youthhack")
 def youthhack():
