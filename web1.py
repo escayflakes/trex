@@ -7,6 +7,10 @@ import csv
 app = Flask(__name__, template_folder="templates")
 GoogleMaps(app)
 
+@app.route("/Home")
+  def home ():
+  return render_template("index.html")
+
 @app.route("/")
 def mapview():
     sndmap = Map(
