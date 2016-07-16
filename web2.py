@@ -27,10 +27,30 @@ def populate_tracker():
     bike_fleet.append(make_bike(3,"locked",14.657576,121.074031))
     bike_fleet.append(make_bike(4,"unlocked",14.648329,121.074190))
 
-@app.route("/Home")
+@app.route("/index")
 def home ():
   return render_template("index.html")
 
+@app.route("/login")
+def login ():
+    return render_template("LogIn.html")
+
+@app.route("/signup")
+def signup ():
+    return render_template("SignUp.html")
+
+@app.route("/timer")
+def timer():
+    return render_template("timer.html")
+
+@app.route("/bikewaiting")
+def bikewaiting():
+    return render_template("waiting.html")
+
+@app.route("/endtrip")
+def endtrip():
+    return render_template("end.html")
+    
 @app.route("/")
 def mapview():
     populate_tracker()
