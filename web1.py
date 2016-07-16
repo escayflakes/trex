@@ -7,6 +7,15 @@ import csv
 app = Flask(__name__, template_folder="templates")
 GoogleMaps(app)
 
+def make_bike(bike_ID,bike_status,bike_lat,bike_long):
+    bike = {}
+    bike['bike_ID'] = bike_ID
+    bike['bike_status'] = bike_status
+    bike['bike_lat'] = bike_lat
+    bike['bike_long'] = bike_long
+
+    return bike
+
 @app.route("/Home")
 def home ():
   return render_template("index.html")
