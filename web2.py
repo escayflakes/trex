@@ -2,17 +2,18 @@ from flask import Flask, render_template
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 
+import math
 import csv
 
 app = Flask(__name__, template_folder="templates")
 GoogleMaps(app)
 
-user_lng = 121.060197
-user_lat = 14.657576
+user_lng = 121.074190
+user_lat = 14.648329
 bike_fleet = []
 
 def bike_distance(bike_number):
-    distance = (user_lat - bike_fleet[bike_number]['bike_lat'])**2 + (user_lng - bike_fleet[bike_number]['bike_lng'])**2
+    distance = math.sqrt((user_lat - bike_fleet[bike_number][2])**2 + (user_lng - bike_fleet[bike_number][3])**2)
     return distance
 
 # page linking
@@ -34,7 +35,40 @@ def timer():
 
 @app.route("/bikewaiting")
 def bikewaiting():
-    return render_template("waiting.html")
+    nearest_bike = []
+    shortest_distance = 999999
+    current_distance = 0
+    bike_fleet = csv.reader(open("database_bikes.csv"))
+    for bike in bike_fleet:
+        if bike[1] == "locked":
+            current_distance = (user_lat - float(bike[2]))**2 + (user_lng - float(bike[3])**2)
+            if current_distance < float(shortest_distance):
+                shortest_distance = current_distance
+                nearest_bike = bike
+            else:
+                pass
+        else:
+            pass
+    wait_map = Map(
+        identifier="wait_map",
+        lat=nearest_bike[2],
+        lng=nearest_bike[3],
+        zoom=15,
+        markers=[
+        {
+        'icon': 'https://raw.githubusercontent.com/escayflakes/trex/master/tiny%20logo.png',
+        'lat': nearest_bike[2],
+        'lng': nearest_bike[3],
+        'infobox': "<b>Unlock me now!</b>"
+        },
+        {
+         'icon': 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+         'lat': user_lat,
+         'lng': user_lng,
+         'infobox': "<b>You are here</b>"
+        }]
+    )
+    return render_template("waiting.html",wait_map=wait_map)
 
 @app.route("/endtrip")
 def endtrip():
