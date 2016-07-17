@@ -3460,7 +3460,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-block {
   display: block;
-  width: 75%;
+  width: 100%;
 }
 .btn-block + .btn-block {
   margin-top: 5px;
@@ -6769,7 +6769,33 @@ button.close {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+#clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
 
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
  .resize-fill-and-clip{ 
   /* Resize to fill and retain aspect ratio.
      Will cause clipping if aspect ratio of box is different from image. */ 
