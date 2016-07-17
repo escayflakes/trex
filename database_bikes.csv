@@ -3,3 +3,5 @@ bike_ID,bike_status,bike_lat,bike_long
 2,"broken",14.657905,121.060049
 3,"locked",14.657576,121.074031
 4,"unlocked",14.648329,121.074190
+5,"locked",14.647319,121.074390
+6,"unlocked",14.647219,121.075390
