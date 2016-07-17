@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html>
         <head>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}"/>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='stylesheets/bootstrap.css') }}"/>
     <!--<link href="css/bootstrap.css" rel="stylesheet">-->
     <title>Dashboard</title>
     <meta charset="utf-8">
@@ -26,8 +26,11 @@
         </head>
         <center><body class="make-it-middle">
            <h1>Bike Share Dashboard</h1>
-            {{sndmap.html}}
            <br> <center><a type="button" class="btn btn-danger btn-block" href="http://127.0.0.1:5000/bikewaiting">Reserve a Bike!</a> <br>
 
+            {{sndmap.html}}
+           
+
+            <br><br><br> <center><a type="button" class="btn btn-danger btn-block" href="http://127.0.0.1:5000/index">Log out</a> <br>
         </body></center>
 </html>
