@@ -11,7 +11,6 @@ user_lng = 121.060197
 user_lat = 14.657576
 bike_fleet = []
 
-
 def bike_distance(bike_number):
     distance = (user_lat - bike_fleet[bike_number]['bike_lat'])**2 + (user_lng - bike_fleet[bike_number]['bike_lng'])**2
     return distance

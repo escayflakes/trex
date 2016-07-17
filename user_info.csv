@@ -1,4 +1,4 @@
-user_fname,user_lname,user_sn,user_pw,user_mail,user_cp
+user_fname,user_lname,user_sn,user_pw,user_mail,user_cp, user_lng, user_lat
 harry,potter,2013-65859,harrypotterpw,harry@potter.com,918288446
 ron,weasley,2016-29041,ronweasleypw,ron@weasley.com,91395801
 bart,simpson,2014-39430,bartsimpsonpw,bart@simpson.com,9165407173
