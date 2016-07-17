@@ -36,13 +36,13 @@ def timer():
 @app.route("/bikewaiting")
 def bikewaiting():
     nearest_bike = []
-    shortest_distance = 999999
+    shortest_distance = 99999999
     current_distance = 0
     bike_fleet = csv.reader(open("database_bikes.csv"))
     for bike in bike_fleet:
         if bike[1] == "locked":
-            current_distance = (user_lat - float(bike[2]))**2 + (user_lng - float(bike[3])**2)
-            if current_distance < float(shortest_distance):
+            current_distance = math.sqrt((user_lat - float(bike[2]))**2 + (user_lng - float(bike[3]))**2)
+            if current_distance < shortest_distance:
                 shortest_distance = current_distance
                 nearest_bike = bike
             else:
