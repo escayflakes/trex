@@ -11,7 +11,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='stylesheets/bootstrap.css') }}"/>
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>	
   
 
@@ -21,7 +21,7 @@
 
   <body>
     
-    <img src="IMG_6849.jpg" class="img-responsive" alt="Responsive image">
+    <img src="/static/images/IMG_6849.jpg" class="img-responsive" alt="Responsive image">
     
     <h1>Sign up for UP Bike Share</h1>
     <form>
@@ -57,7 +57,7 @@
       </div>
 
       <div> <br>
-        <a type="button" class="btn btn-danger btn-block" href="LogIn.html">Make an account</a>
+        <a type="button" class="btn btn-danger btn-block" href="http://127.0.0.1:5000/login">Make an account</a>
       </div>
     </form>
   </body></center>
