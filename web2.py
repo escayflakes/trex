@@ -10,6 +10,9 @@ GoogleMaps(app)
 # a list of dictionaries representing bikes generated from make_bike()
 bike_fleet = []
 
+user_long = 121.060197
+user_lat = 14.657576
+
 # make_bike creates a dictionary that represents a bike and its attributes
 def make_bike(bike_ID,bike_status,bike_lat,bike_long):
     bike = {}
@@ -19,6 +22,10 @@ def make_bike(bike_ID,bike_status,bike_lat,bike_long):
     bike['bike_long'] = bike_long
 
     return bike
+
+def bike_distance(bike_number):
+    distance = (user_lat - bike_fleet[bike_number]['bike_lat'])^2 + (user_long - bike_fleet[bike_number]['bike_long'])^2
+    return distance
 
 # function that adds a bike(dictionary) to the list, bike_fleet
 def populate_tracker():
@@ -50,7 +57,7 @@ def bikewaiting():
 @app.route("/endtrip")
 def endtrip():
     return render_template("end.html")
-    
+
 @app.route("/")
 def mapview():
     populate_tracker()
