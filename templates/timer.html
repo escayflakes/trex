@@ -9,17 +9,17 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}"/>
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 </head>
 <body class="make-it-middle">
 
    <center> <h1>Bike In Use</h1></center>
-   <img src="UPBS LOGO 1B.png" class="img-responsive" alt="Responsive image">
+   <img src="/static/images/UPBS LOGO 1B.png" class="img-responsive" alt="Responsive image">
   
    <br>
 
-   <center><a type="button" class="btn btn-danger btn-block" href="SignUp.html">End Session</a> <br>
+   <center><a type="button" class="btn btn-danger btn-block" href="http://127.0.0.1:5000/endtrip">End Session</a> <br>
 <!--
 <h1>Countdown Clock</h1>
 
